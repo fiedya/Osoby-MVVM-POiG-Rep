@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows;
 
 namespace OsobyMVVM.ViewModel
 {
@@ -14,10 +15,20 @@ namespace OsobyMVVM.ViewModel
     internal class Linker : ViewModelBase
     {
         private Operating opera = new Model.Operating();
+        private PeopleManager pm = new PeopleManager();
+        public ObservableCollection<Person> oc = new ObservableCollection<Person>();
 
         public Linker()
         {
-            //update osób ?
+
+        }
+
+        public void AddPerson(string[] s, int[] i)
+        {
+
+            Person p = opera.AddPerson(s, i);
+            oc.Add(p);
+            MessageBox.Show(Convert.ToString(oc.Count));
         }
 
         #region Interfejs publiczny
@@ -34,7 +45,7 @@ namespace OsobyMVVM.ViewModel
         public int Age { get; set; }
         public int Weight { get; set; }
 
-        private string stringToSave=null;
+        private string stringToSave = null;
         public string StringToSave
         {
             //string, który posłuży zapisaniu
@@ -45,7 +56,7 @@ namespace OsobyMVVM.ViewModel
             }
             set
             {
-                stringToSave= value;
+                stringToSave = value;
             }
         }
 
@@ -65,23 +76,41 @@ namespace OsobyMVVM.ViewModel
             }
         }
 
-        #region Polecenia
-
-        private ICommand _returns = null;
-        public ICommand Returns
+        public ObservableCollection<Person> Oc
         {
             get
             {
-                if(_returns==null)
+                return oc;
+            }
+            set
+            {
+                oc = value;
+                onPropertyChanged(nameof(Oc));
+            }
+        }
+
+
+        #region Polecenia
+
+        private ICommand _returnsList = null;
+        public ICommand ReturnsList
+        {
+            get
+            {
+                if (_returnsList == null)
                 {
-                    //mam nadzieje, ze przypisuje ReturnsPerson
-                    //jeśli poniższe nie są nullami
-                    _returns = new RelayCommand(
-                        arg => { Result = opera.StringPerson(Surname, Name, Age, Weight); },
-                        arg => string.IsNullOrEmpty(Surname) && string.IsNullOrEmpty(Name)
+
+                    _returnsList = new RelayCommand(
+                       arg =>
+                       {
+                           Result = opera.ToListPerson(Surname, Name, Age, Weight);
+                           AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
+
+                       },
+                       arg => (!string.IsNullOrEmpty(Surname)) && (!string.IsNullOrEmpty(Name))
                         );
                 }
-                return _returns;
+                return _returnsList;
             }
         }
 
@@ -100,7 +129,7 @@ namespace OsobyMVVM.ViewModel
 
                         );
                 }
-              
+
                 return _clear;
             }
         }

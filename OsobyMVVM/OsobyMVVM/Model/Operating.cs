@@ -53,5 +53,11 @@ namespace OsobyMVVM.Model
         {
             return surname + ";" + name + ";" + age + ";" + weight;
         }
+
+        public string ToListPerson(string surname, string name, int age, int weight)
+        {  
+            return surname + "     " + name + "     " + age + "     " + weight;
+        }
+
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="ViewModel\BaseClass\ViewModelBase.cs" />
     <Compile Include="ViewModel\IntToStringConverter.cs" />
     <Compile Include="ViewModel\Linker.cs" />
+    <Compile Include="ViewModel\PeopleManager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

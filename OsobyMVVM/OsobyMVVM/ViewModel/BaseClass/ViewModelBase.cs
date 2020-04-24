@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace OsobyMVVM.ViewModel.BaseClass
 {
+
     class ViewModelBase : INotifyPropertyChanged
     {
+
         //zdarzenie informujące o zmiane własności w obiekcie ViewModelu
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -27,5 +29,8 @@ namespace OsobyMVVM.ViewModel.BaseClass
                 }
             }
         }
+
+
+
     }
 }

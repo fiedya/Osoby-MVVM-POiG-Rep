@@ -71,3 +71,4 @@ namespace OsobyMVVM.ViewModel.BaseClass
         }
         #endregion
     }
+}
