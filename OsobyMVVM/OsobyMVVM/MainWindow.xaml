@@ -74,7 +74,7 @@
                 <TextBox  x:Name="weightC" Margin="10,10,10,10" Height="20" Width="50"
                   Background="darkred" TextAlignment="Center"
                       Foreground="White"
-                  Text="{Binding Path=Age, Mode=TwoWay,Converter={StaticResource intTostringConverter}}"/>
+                  Text="{Binding Path=Weight, Mode=TwoWay,Converter={StaticResource intTostringConverter}}"/>
 
             </StackPanel>
             <StackPanel Orientation = "Horizontal" HorizontalAlignment="Center">
@@ -109,11 +109,18 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel>
-                            <TextBlock Text="Surname: " />
+                            <TextBlock Text="Nazwisko: " />
                             <TextBlock Text="{Binding Surname}" FontWeight="Bold" />
                             <TextBlock Text=", " />
-                            <TextBlock Text="Name: " />
+                            <TextBlock Text="Imię: " />
                             <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Wiek:" />
+                            <TextBlock Text="{Binding Age}" FontWeight="Bold" />
+                            <TextBlock Text=", " />
+                            <TextBlock Text="Waga:" />
+                            <TextBlock Text="{Binding Weight}" FontWeight="Bold" />
+
                         </WrapPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

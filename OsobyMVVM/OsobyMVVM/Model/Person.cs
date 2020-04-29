@@ -8,18 +8,16 @@ namespace OsobyMVVM.Model
 {
     public class Person
     {
-        string name, surname;
-        int age, weight;
 
-        public Person(string surname, string name, int age, int weight)
+        public Person(string surname, string name, int? age, int? weight)
         {
-            name = this.name;
-            surname = this.surname;
-            age = this.age;
-            weight = this.weight;
+            name = this.Name;//.ToUpper();
+            surname = this.Surname;//.ToUpper();
+            age = this.Age;
+            weight = this.Weight;
         }
 
-        public string Name { get; set; }
+        public string Name { get ; set; }
         public string Surname { get; set; }
         public int? Age { get; set; }
         public int? Weight { get; set; }

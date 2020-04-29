@@ -20,15 +20,16 @@ namespace OsobyMVVM.ViewModel
 
         public Linker()
         {
-
+           oc = JsonManager.LoadJsonBase();
         }
 
-        public void AddPerson(string[] s, int[] i)
+        public Person AddPerson(string[] s, int[] i)
         {
 
             Person p = opera.AddPerson(s, i);
             oc.Add(p);
             MessageBox.Show(Convert.ToString(oc.Count));
+            return p;
         }
 
         #region Interfejs publiczny
@@ -104,7 +105,9 @@ namespace OsobyMVVM.ViewModel
                        arg =>
                        {
                            Result = opera.ToListPerson(Surname, Name, Age, Weight);
-                           AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
+                           Person p = AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
+                             JsonManager.PersonToJson(p);
+                           //JsonManager.PeopleToJson(oc);
 
                        },
                        arg => (!string.IsNullOrEmpty(Surname)) && (!string.IsNullOrEmpty(Name))
