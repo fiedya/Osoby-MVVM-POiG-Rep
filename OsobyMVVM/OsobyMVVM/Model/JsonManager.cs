@@ -25,6 +25,17 @@ namespace OsobyMVVM.Model
 
         }
 
+        public static void PeopleToJson(ObservableCollection<Person> oc)
+        {
+            File.WriteAllText(path, string.Empty);
+            string jsonString;
+            for(int i=0; i<oc.Count; i++)
+            {
+                jsonString = JsonConvert.SerializeObject(oc[i]);
+                File.AppendAllText(path, jsonString + Environment.NewLine);
+            }
+        }
+
         public static ObservableCollection<Person> LoadJsonBase()
         {
             ObservableCollection<Person> oc = new ObservableCollection<Person>();

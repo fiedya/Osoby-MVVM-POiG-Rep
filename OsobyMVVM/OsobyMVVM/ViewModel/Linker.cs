@@ -15,7 +15,6 @@ namespace OsobyMVVM.ViewModel
     internal class Linker : ViewModelBase
     {
         private Operating opera = new Model.Operating();
-        private PeopleManager pm = new PeopleManager();
         public ObservableCollection<Person> oc = new ObservableCollection<Person>();
 
         public Linker()
@@ -32,6 +31,10 @@ namespace OsobyMVVM.ViewModel
             return p;
         }
 
+        public Person EditPerson(Person p, string[] s, int[] i)
+        {
+            Person p = opera.Ed
+        }
         #region Interfejs publiczny
         //skłąda się z
         //string Surname - nazwisko
@@ -136,6 +139,52 @@ namespace OsobyMVVM.ViewModel
                 return _clear;
             }
         }
+
+
+
+        private ICommand _editing = null;
+        public ICommand Editing
+        {
+            get
+            {
+                _returnsList = new RelayCommand(
+                  arg =>
+                    {
+                         Result = opera.ToListPerson(Surname, Name, Age, Weight);
+                         opera.EditExisting(p, Surname, Name, Age, Weight);
+                         JsonManager.PeopleToJson(oc);
+                       },
+                     arg => (!string.IsNullOrEmpty(Surname)) && (!string.IsNullOrEmpty(Name))
+                  );
+                return _editing;
+            }
+
+        }
+
+        private ICommand _deleting = null;
+        public ICommand Deleting
+        {
+            get
+            {
+                Delete(p);
+                return _deleting;
+            }
+        }
+
+
+        public void Delete(Person p)
+        {
+            oc.Remove(p);
+            JsonManager.PeopleToJson(oc)l
+        }
+
+        bool IsOk(int age, int weight)
+        {
+            if (age >= 0 && age <= 100 && weight >= 10 && weight <= 120) return true;
+            else return false;
+        }
+
+
         #endregion
 
         #endregion

@@ -49,6 +49,17 @@ namespace OsobyMVVM.Model
 
             return person;
         }
+
+        public void EditExisting(Person p, string name, string surname, string age, string weight)
+        {
+
+            p.Name = name;
+            p.Surname = surname;
+            p.Age = Convert.ToInt32(age);
+            p.Weight = Convert.ToInt32(weight);
+        }
+
+
         public string StringPerson(string surname, string name, int age, int weight)
         {
             return surname + ";" + name + ";" + age + ";" + weight;

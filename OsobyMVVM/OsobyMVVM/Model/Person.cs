@@ -11,10 +11,10 @@ namespace OsobyMVVM.Model
 
         public Person(string surname, string name, int? age, int? weight)
         {
-            name = this.Name;//.ToUpper();
-            surname = this.Surname;//.ToUpper();
-            age = this.Age;
-            weight = this.Weight;
+            this.Name = name;//.ToUpper();
+            this.Surname = surname;//.ToUpper();
+            this.Age = age;
+            this.Weight = weight;
         }
 
         public string Name { get ; set; }
