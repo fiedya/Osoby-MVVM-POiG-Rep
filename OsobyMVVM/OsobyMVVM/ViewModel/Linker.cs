@@ -31,10 +31,10 @@ namespace OsobyMVVM.ViewModel
             return p;
         }
 
-        public Person EditPerson(Person p, string[] s, int[] i)
-        {
-            Person p = opera.Ed
-        }
+        //public Person EditPerson(Person p, string[] s, int[] i)
+        //{
+        //    Person p = opera.Ed
+        //}
         #region Interfejs publiczny
         //skłąda się z
         //string Surname - nazwisko
@@ -151,7 +151,7 @@ namespace OsobyMVVM.ViewModel
                   arg =>
                     {
                          Result = opera.ToListPerson(Surname, Name, Age, Weight);
-                         opera.EditExisting(p, Surname, Name, Age, Weight);
+                      //   opera.EditExisting(p, Surname, Name, Age, Weight);
                          JsonManager.PeopleToJson(oc);
                        },
                      arg => (!string.IsNullOrEmpty(Surname)) && (!string.IsNullOrEmpty(Name))
@@ -166,7 +166,7 @@ namespace OsobyMVVM.ViewModel
         {
             get
             {
-                Delete(p);
+          //      Delete(p);
                 return _deleting;
             }
         }
@@ -175,7 +175,7 @@ namespace OsobyMVVM.ViewModel
         public void Delete(Person p)
         {
             oc.Remove(p);
-            JsonManager.PeopleToJson(oc)l
+            JsonManager.PeopleToJson(oc);
         }
 
         bool IsOk(int age, int weight)
