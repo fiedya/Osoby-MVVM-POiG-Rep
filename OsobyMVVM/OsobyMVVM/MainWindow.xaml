@@ -103,8 +103,6 @@
                   Foreground="darkred" TextAlignment="Center" FontSize="20"
                        FontStyle="Oblique"
                   Text="Lista:"/>
-            <TextBlock x:Name="os1"
-                           Text="{Binding Result}"/>
 
             <ListBox ItemsSource="{Binding Path= Oc}">
                 <ListBox.ItemTemplate>
