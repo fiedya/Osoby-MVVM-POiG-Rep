@@ -25,7 +25,7 @@ namespace OsobyMVVM.Model
 
         public override string ToString()
         {
-            return Surname + "     " + Name + "     " + Age + "     " + Weight;
+            return Surname +" " + Name + "\nWiek: "+ Age + ", Waga:" + Weight;
         }
     }
 }

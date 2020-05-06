@@ -35,3 +35,7 @@ D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby
 D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.csproj.CopyComplete
 D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\Newtonsoft.Json.dll
 D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\Newtonsoft.Json.xml
+D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\System.Windows.Interactivity.dll
+D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\System.Windows.Interactivity.xml

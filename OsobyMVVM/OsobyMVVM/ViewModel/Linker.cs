@@ -12,11 +12,15 @@ namespace OsobyMVVM.ViewModel
 {
     using Model;
     using BaseClass;
+    using System.Windows.Controls.Primitives;
+    using System.Windows.Controls;
+
     internal class Linker : ViewModelBase
     {
         private Operating opera = new Model.Operating();
         public ObservableCollection<Person> oc = new ObservableCollection<Person>();
-
+        public int index;
+        public Person currentPerson;
         public Linker()
         {
            oc = JsonManager.LoadJsonBase();
@@ -27,9 +31,9 @@ namespace OsobyMVVM.ViewModel
 
             Person p = opera.AddPerson(s, i);
             oc.Add(p);
-            MessageBox.Show(Convert.ToString(oc.Count));
             return p;
         }
+
 
         //public Person EditPerson(Person p, string[] s, int[] i)
         //{
@@ -93,6 +97,31 @@ namespace OsobyMVVM.ViewModel
             }
         }
 
+        public int Index
+        {
+            get
+            {
+                return index;
+            }
+            set
+            {
+                index = value;
+                onPropertyChanged(nameof(Index));
+            }
+        }
+
+        public Person CurrentPerson
+        {
+            get
+            {
+                return currentPerson;
+            }
+            set
+            {
+                currentPerson = value;
+                onPropertyChanged(nameof(CurrentPerson));
+            }
+        }
 
         #region Polecenia
 
@@ -107,13 +136,18 @@ namespace OsobyMVVM.ViewModel
                     _returnsList = new RelayCommand(
                        arg =>
                        {
-                           Result = opera.ToListPerson(Surname, Name, Age, Weight);
-                           Person p = AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
-                             JsonManager.PersonToJson(p);
-                           //JsonManager.PeopleToJson(oc);
-
+                           if (Age == 0 || Weight == 0 || Name == null || Surname == null)
+                               MessageBox.Show("Uwaga! Masz niepoprawne dane!", "UWAGA, BŁĄD");
+                           else
+                           {
+                               Result = opera.ToListPerson(Surname, Name, Age, Weight);
+                               Person p = AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
+                               JsonManager.PersonToJson(p);
+                               Age = 0;
+                               Weight = 0;
+                           }
                        },
-                       arg => (!string.IsNullOrEmpty(Surname)) && (!string.IsNullOrEmpty(Name))
+                       arg => (true)
                         );
                 }
                 return _returnsList;
@@ -147,41 +181,91 @@ namespace OsobyMVVM.ViewModel
         {
             get
             {
-                _returnsList = new RelayCommand(
+                _editing = new RelayCommand(
                   arg =>
                     {
-                         Result = opera.ToListPerson(Surname, Name, Age, Weight);
-                      //   opera.EditExisting(p, Surname, Name, Age, Weight);
-                         JsonManager.PeopleToJson(oc);
+                        if (Age == 0 || Weight == 0 || Name==null ||Surname==null)
+                            MessageBox.Show("Uwaga! Masz niepoprawne dane!", "UWAGA, BŁĄD");
+                        else
+                        {
+                            if (currentPerson != null)
+                                EditExisting(currentPerson);
+                            JsonManager.PeopleToJson(oc);
+                        }
                        },
-                     arg => (!string.IsNullOrEmpty(Surname)) && (!string.IsNullOrEmpty(Name))
+                     arg => (true)
                   );
                 return _editing;
             }
 
         }
 
+
+        public void EditExisting(Person current)
+        {
+            int i = oc.IndexOf(current);
+            Oc.Remove(current);
+            Person p = opera.AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
+            Oc.Insert(i, p);
+            currentPerson = null;
+        }
+
+
+
         private ICommand _deleting = null;
         public ICommand Deleting
         {
             get
             {
-          //      Delete(p);
+                _deleting = new RelayCommand(
+                  arg =>
+                  {
+                      if(currentPerson!=null)
+                      Delete(currentPerson);
+                      JsonManager.PeopleToJson(oc);
+                  },
+                     arg => (true)
+                  );
                 return _deleting;
             }
         }
 
+        private ICommand _mouseEnter = null;
+        public ICommand MouseEnterFunction
+        {
+            get
+            {
+                _mouseEnter = new RelayCommand(
+                   arg =>
+                   {
+                       if (currentPerson != null)
+                           ShowPopup(currentPerson);
 
+                       JsonManager.PeopleToJson(oc);
+                   },
+                      arg => (true)
+                   );
+                return _mouseEnter;
+            }
+        }
+
+        public void ShowPopup(Person p)
+        {
+            Popup pp = new Popup();
+            TextBlock tb = new TextBlock();
+            tb.Text = p.ToString();
+            pp.Child=tb;
+            pp.Placement = PlacementMode.MousePoint;
+            pp.Visibility =Visibility.Visible;
+            pp.StaysOpen = false;
+
+
+        }
         public void Delete(Person p)
         {
             oc.Remove(p);
             JsonManager.PeopleToJson(oc);
-        }
-
-        bool IsOk(int age, int weight)
-        {
-            if (age >= 0 && age <= 100 && weight >= 10 && weight <= 120) return true;
-            else return false;
+            currentPerson = null;
         }
 
 
