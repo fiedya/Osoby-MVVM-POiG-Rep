@@ -88,11 +88,6 @@
                     Background="darkred" Foreground="White"
                     Content="Aktualizuj" HorizontalAlignment="Right"
                         Command="{Binding Editing}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseEnter">
-                            <i:InvokeCommandAction Command="{Binding MouseEnterFunction}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
                 </Button>
 
                 <Button x:Name="delete" Width="80" Height="50" Margin="10,10,10,10"
@@ -123,10 +118,10 @@
                             <TextBlock Text="{Binding Name}" FontWeight="Bold" />
                             <TextBlock Text=", " />
                             <TextBlock Text="Wiek:" />
-                            <TextBlock Text="{Binding Age, Converter={StaticResource intTostringConverter}}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Age, Mode=TwoWay, Converter={StaticResource intTostringConverter}}" FontWeight="Bold" />
                             <TextBlock Text=", " />
                             <TextBlock Text="Waga:" />
-                            <TextBlock Text="{Binding Weight , Converter={StaticResource intTostringConverter}}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Weight, Mode=TwoWay, Converter={StaticResource intTostringConverter}}" FontWeight="Bold" />
 
                         </WrapPanel>
                     </DataTemplate>

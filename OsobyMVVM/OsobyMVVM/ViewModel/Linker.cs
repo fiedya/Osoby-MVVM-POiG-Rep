@@ -19,8 +19,7 @@ namespace OsobyMVVM.ViewModel
     {
         private Operating opera = new Model.Operating();
         public ObservableCollection<Person> oc = new ObservableCollection<Person>();
-        public int index;
-        public Person currentPerson;
+
         public Linker()
         {
            oc = JsonManager.LoadJsonBase();
@@ -70,20 +69,6 @@ namespace OsobyMVVM.ViewModel
 
         #endregion
 
-        private string result = null;
-        public string Result
-        {
-            get
-            {
-                return result;
-            }
-            set
-            {
-                result = value;
-                onPropertyChanged(nameof(Result));
-            }
-        }
-
         public ObservableCollection<Person> Oc
         {
             get
@@ -97,23 +82,19 @@ namespace OsobyMVVM.ViewModel
             }
         }
 
-        public int Index
-        {
-            get
-            {
-                return index;
-            }
-            set
-            {
-                index = value;
-                onPropertyChanged(nameof(Index));
-            }
-        }
+        public Person currentPerson;
 
         public Person CurrentPerson
         {
             get
             {
+                //if (currentPerson != null)
+                //{
+                //    Surname = currentPerson.Surname;
+                //    Name =  currentPerson.Name;
+                //    Age = Convert.ToInt32(currentPerson.Age);
+                //    Weight =  Convert.ToInt32(currentPerson.Weight);
+                //}
                 return currentPerson;
             }
             set
@@ -136,13 +117,13 @@ namespace OsobyMVVM.ViewModel
                     _returnsList = new RelayCommand(
                        arg =>
                        {
-                           if (Age == 0 || Weight == 0 || Name == null || Surname == null)
+                           if (Age == 0 || Weight == 0 || Name == null || Surname == null || Surname=="" || Name=="")
                                MessageBox.Show("Uwaga! Masz niepoprawne dane!", "UWAGA, BŁĄD");
                            else
                            {
-                               Result = opera.ToListPerson(Surname, Name, Age, Weight);
                                Person p = AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
                                JsonManager.PersonToJson(p);
+                               //dla zapewnienia ze dane beda nowe
                                Age = 0;
                                Weight = 0;
                            }
@@ -154,27 +135,6 @@ namespace OsobyMVVM.ViewModel
             }
         }
 
-        #region polecenie odpoiwedzialne za czyszczenie wyniku - własnosci Result  
-        private ICommand _clear = null;
-        public ICommand Clear
-        {
-            get
-            {
-                if (_clear == null)
-                {
-                    _clear = new RelayCommand(
-                        arg => { Result = null; },
-
-                        arg => true
-
-                        );
-                }
-
-                return _clear;
-            }
-        }
-
-
 
         private ICommand _editing = null;
         public ICommand Editing
@@ -184,7 +144,7 @@ namespace OsobyMVVM.ViewModel
                 _editing = new RelayCommand(
                   arg =>
                     {
-                        if (Age == 0 || Weight == 0 || Name==null ||Surname==null)
+                        if (Age == 0 || Weight == 0 || Name==null ||Surname==null || Surname == "" || Name == "")
                             MessageBox.Show("Uwaga! Masz niepoprawne dane!", "UWAGA, BŁĄD");
                         else
                         {
@@ -229,38 +189,6 @@ namespace OsobyMVVM.ViewModel
                 return _deleting;
             }
         }
-
-        private ICommand _mouseEnter = null;
-        public ICommand MouseEnterFunction
-        {
-            get
-            {
-                _mouseEnter = new RelayCommand(
-                   arg =>
-                   {
-                       if (currentPerson != null)
-                           ShowPopup(currentPerson);
-
-                       JsonManager.PeopleToJson(oc);
-                   },
-                      arg => (true)
-                   );
-                return _mouseEnter;
-            }
-        }
-
-        public void ShowPopup(Person p)
-        {
-            Popup pp = new Popup();
-            TextBlock tb = new TextBlock();
-            tb.Text = p.ToString();
-            pp.Child=tb;
-            pp.Placement = PlacementMode.MousePoint;
-            pp.Visibility =Visibility.Visible;
-            pp.StaysOpen = false;
-
-
-        }
         public void Delete(Person p)
         {
             oc.Remove(p);
@@ -271,6 +199,5 @@ namespace OsobyMVVM.ViewModel
 
         #endregion
 
-        #endregion
     }
 }
