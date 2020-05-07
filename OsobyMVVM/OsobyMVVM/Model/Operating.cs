@@ -6,61 +6,31 @@ using System.Threading.Tasks;
 
 namespace OsobyMVVM.Model
 {
+    /// <summary>
+    /// Klasa, która miałą służyć czemuś, ale widzę że niekoniecznie...
+    /// </summary>
     class Operating
     {
         public Person person { get; } = new Person("", "", 0,0);
 
-        public void AddNameSurname(params string[] s)
-        {
-            if (s != null)
-            {
-                person.Surname = s[0];
-                if (s[1] != null)
-                    person.Name = s[1];
-            }
-        }
-        public void AddAgeWeight(params int?[] aw)
-        {
-            int? a, w;
-            if (aw != null)
-            {
-                a = aw[0];
-                if (aw[1] != null)
-                {
-                    w = aw[1];
-                    person.Age = a;
-                    person.Weight = w;
-
-                }
-                else
-                {
-                    person.Age = a;
-
-                }
-            }
-        }
-
+      
         public Person AddPerson(string[] s, int[] i)
         {
-            person.Surname = s[0];
-            person.Name = s[1];
+            person.Surname = Uplo(s[0]);
+            person.Name = Uplo(s[1]);
             person.Age = i[0];
             person.Weight = i[1];
 
             return person;
         }
 
-
-
-        public string StringPerson(string surname, string name, int age, int weight)
+        //pierwsza duża litera, reszta mała.
+        //static nie wymaga instancji klasy, bo nie chce jej robić w klasie Person (gdzie potrzebuję funkcji)
+        public static string Uplo(string s)
         {
-            return surname + ";" + name + ";" + age + ";" + weight;
+            return s.First().ToString().ToUpper() + s.Substring(1).ToLower();
         }
 
-        public string ToListPerson(string surname, string name, int age, int weight)
-        {  
-            return surname + "     " + name + "     " + age + "     " + weight;
-        }
 
     }
 }

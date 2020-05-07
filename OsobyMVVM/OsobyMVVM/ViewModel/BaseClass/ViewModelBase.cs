@@ -20,7 +20,7 @@ namespace OsobyMVVM.ViewModel.BaseClass
             //jeśli ktoś obserwuje zdarzenie PropertyChanged
             if (PropertyChanged != null)
             {
-                //wywołanie zdarzenia dla wszsytkich zgłoszonych do aktualizacji własności
+                //wywołanie zdarzenia dla wszystkich zgłoszonych do aktualizacji własności
                 //w ten sposób powiadamiamy widok o zmianie stanu własności
                 //w ViewModel
                 foreach (var prop in namesOfProperties)

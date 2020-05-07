@@ -22,90 +22,77 @@ namespace OsobyMVVM.ViewModel
 
         public Linker()
         {
-           oc = JsonManager.LoadJsonBase();
-        }
-
-        public Person AddPerson(string[] s, int[] i)
-        {
-
-            Person p = opera.AddPerson(s, i);
-            oc.Add(p);
-            return p;
+            oc = JsonManager.LoadJsonBase();
         }
 
 
-        //public Person EditPerson(Person p, string[] s, int[] i)
-        //{
-        //    Person p = opera.Ed
-        //}
-        #region Interfejs publiczny
-        //skłąda się z
-        //string Surname - nazwisko
-        //string Name - imie
-        //int Age - wiek
-        //int Weight - waga
+        #region Pola prywatne i publiczne
 
+        private string surname;
+        private string name;
+        private int age;
+        private int weight;
+            
 
-
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public int Weight { get; set; }
-
-        private string stringToSave = null;
-        public string StringToSave
+        public string Surname { 
+            get { return surname; } 
+            set { surname = value; 
+                onPropertyChanged(nameof(surname)); 
+            } 
+        }
+        public string Name { 
+            get { return name; } 
+            set { name = value; 
+                onPropertyChanged(nameof(Name)); 
+            } 
+        }
+        public int Age
         {
-            //string, który posłuży zapisaniu
-            //tego w formie jednego stringa
-            get
-            {
-                return stringToSave;
+            get { return age; }
+            set {   age = value;
+                onPropertyChanged(nameof(Age));
             }
-            set
-            {
-                stringToSave = value;
+        }
+        public int Weight
+        {
+            get { return weight; }
+            set { weight = value;
+                onPropertyChanged(nameof(Weight));
             }
         }
 
-        #endregion
+
 
         public ObservableCollection<Person> Oc
         {
-            get
-            {
-                return oc;
-            }
-            set
-            {
-                oc = value;
+            get { return oc; }
+            set { oc = value;
                 onPropertyChanged(nameof(Oc));
             }
         }
 
-        public Person currentPerson;
-
+        private Person currentPerson;
         public Person CurrentPerson
         {
-            get
-            {
-                //if (currentPerson != null)
-                //{
-                //    Surname = currentPerson.Surname;
-                //    Name =  currentPerson.Name;
-                //    Age = Convert.ToInt32(currentPerson.Age);
-                //    Weight =  Convert.ToInt32(currentPerson.Weight);
-                //}
-                return currentPerson;
-            }
-            set
-            {
+            get { return currentPerson; }
+            set {
                 currentPerson = value;
+                if (currentPerson != null)
+                {
+                    Surname = currentPerson.Surname;
+                    Name = currentPerson.Name;
+                    Age = Convert.ToInt32(currentPerson.Age);
+                    Weight = Convert.ToInt32(currentPerson.Weight);
+                }
                 onPropertyChanged(nameof(CurrentPerson));
+               
             }
         }
+        #endregion
 
         #region Polecenia
 
+        // Wywoływane dla przycisku "dodaj osobe"
         private ICommand _returnsList = null;
         public ICommand ReturnsList
         {
@@ -123,7 +110,7 @@ namespace OsobyMVVM.ViewModel
                            {
                                Person p = AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
                                JsonManager.PersonToJson(p);
-                               //dla zapewnienia ze dane beda nowe
+                               //dla zapewnienia ze dane beda nowe -> dla zer wywołuje messegeboxa.
                                Age = 0;
                                Weight = 0;
                            }
@@ -136,6 +123,7 @@ namespace OsobyMVVM.ViewModel
         }
 
 
+        //wywoływanie dla przycisku "edytuj/aktualizuj"
         private ICommand _editing = null;
         public ICommand Editing
         {
@@ -144,14 +132,17 @@ namespace OsobyMVVM.ViewModel
                 _editing = new RelayCommand(
                   arg =>
                     {
-                        if (Age == 0 || Weight == 0 || Name==null ||Surname==null || Surname == "" || Name == "")
-                            MessageBox.Show("Uwaga! Masz niepoprawne dane!", "UWAGA, BŁĄD");
-                        else
+                        if (currentPerson != null)
                         {
-                            if (currentPerson != null)
+                            if (Age == 0 || Weight == 0 || Name == null || Surname == null || Surname == "" || Name == "")
+                                MessageBox.Show("Uwaga! Masz niepoprawne dane!", "UWAGA, BŁĄD");
+                            else
+                            {
+
                                 EditExisting(currentPerson);
-                            JsonManager.PeopleToJson(oc);
-                        }
+                                JsonManager.PeopleToJson(oc);
+                            }
+                         }
                        },
                      arg => (true)
                   );
@@ -161,17 +152,7 @@ namespace OsobyMVVM.ViewModel
         }
 
 
-        public void EditExisting(Person current)
-        {
-            int i = oc.IndexOf(current);
-            Oc.Remove(current);
-            Person p = opera.AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
-            Oc.Insert(i, p);
-            currentPerson = null;
-        }
-
-
-
+        //wywoływane dla przycisku "usuń"
         private ICommand _deleting = null;
         public ICommand Deleting
         {
@@ -189,6 +170,13 @@ namespace OsobyMVVM.ViewModel
                 return _deleting;
             }
         }
+
+
+        #endregion
+
+
+        #region Funkcje
+
         public void Delete(Person p)
         {
             oc.Remove(p);
@@ -196,8 +184,24 @@ namespace OsobyMVVM.ViewModel
             currentPerson = null;
         }
 
+        public void EditExisting(Person current)
+        {
+            int i = oc.IndexOf(current);
+            Oc.Remove(current);
+            Person p = opera.AddPerson(new string[] { Surname, Name }, new int[] { Age, Weight });
+            Oc.Insert(i, p);
+            currentPerson = null;
+        }
+
+        public Person AddPerson(string[] s, int[] i)
+        {
+            s[0] = Operating.Uplo(s[0]);
+            s[1] = Operating.Uplo(s[1]);
+            Person p = opera.AddPerson(s, i);
+            oc.Add(p);
+            return p;
+        }
 
         #endregion
-
     }
 }

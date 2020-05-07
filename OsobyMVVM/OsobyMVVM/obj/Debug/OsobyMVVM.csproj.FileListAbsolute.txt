@@ -39,3 +39,43 @@ D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby
 D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\System.Windows.Interactivity.dll
 D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Expression.Interactions.xml
 D:\STUDIA\0.INF\I4. Programowanie obiektowe (Zielonka)\Osoby-MVVM-POiG-Rep\Osoby-MVVM-POiG-Rep\OsobyMVVM\OsobyMVVM\bin\Debug\System.Windows.Interactivity.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\OsobyMVVM.exe.config
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\OsobyMVVM.exe
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\OsobyMVVM.pdb
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Expression.Interactions.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\Newtonsoft.Json.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Buffers.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Memory.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Numerics.Vectors.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Text.Encodings.Web.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Text.Json.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.ValueTuple.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Windows.Interactivity.dll
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\Microsoft.Expression.Interactions.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\Newtonsoft.Json.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Buffers.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Memory.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Numerics.Vectors.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Text.Encodings.Web.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Text.Json.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.ValueTuple.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\bin\Debug\System.Windows.Interactivity.xml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.csprojAssemblyReference.cache
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\MainWindow.g.cs
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\App.g.cs
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM_MarkupCompile.cache
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM_MarkupCompile.lref
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\MainWindow.baml
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.g.resources
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.Properties.Resources.resources
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.csproj.GenerateResource.cache
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.csproj.CopyComplete
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.exe
+E:\example\Osoby-MVVM-POiG-Rep-master (2)\Osoby-MVVM-POiG-Rep-master\OsobyMVVM\OsobyMVVM\obj\Debug\OsobyMVVM.pdb

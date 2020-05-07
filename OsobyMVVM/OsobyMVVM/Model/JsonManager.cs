@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Text.Json;
-//using System.Text.Json.Serialization;
 using System.IO;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
 namespace OsobyMVVM.Model
 {
+    /// <summary>
+    /// Klasa służąca konwersji do JSON i z JSONa
+    /// </summary>
    static class JsonManager
     {
         static string path = @"../../people.json";
         public static void PersonToJson(Person p)
         {
             string jsonString;
-           // jsonString = JsonSerializer.Serialize(p);
             jsonString = JsonConvert.SerializeObject(p);
-            //    jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
-
-            File.AppendAllText(path,jsonString+Environment.NewLine);
+            File.AppendAllText(path,jsonString+Environment.NewLine); //dodaje nową linię -> nową osobę
 
         }
 
@@ -32,7 +30,7 @@ namespace OsobyMVVM.Model
             for(int i=0; i<oc.Count; i++)
             {
                 jsonString = JsonConvert.SerializeObject(oc[i]);
-                File.AppendAllText(path, jsonString + Environment.NewLine);
+                File.AppendAllText(path, jsonString + Environment.NewLine); // dodaje nową linię dla każdej osoby w liście oc
             }
         }
 
@@ -49,7 +47,7 @@ namespace OsobyMVVM.Model
                     {
                         if (!string.IsNullOrEmpty(line))
                         {
-                            p = JsonConvert.DeserializeObject<Person>(line);
+                            p = JsonConvert.DeserializeObject<Person>(line); //zamienia JSONa na ObservableCollection
                             oc.Add(p);
                         }
                     }
