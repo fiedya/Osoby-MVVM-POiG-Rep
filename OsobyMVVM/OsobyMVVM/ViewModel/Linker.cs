@@ -17,8 +17,6 @@ namespace OsobyMVVM.ViewModel
 
     internal class Linker : ViewModelBase
     {
-        private Operating opera = new Model.Operating();
-        public ObservableCollection<Person> oc = new ObservableCollection<Person>();
 
         public Linker()
         {
@@ -32,7 +30,9 @@ namespace OsobyMVVM.ViewModel
         private string name;
         private int age;
         private int weight;
-            
+        private Operating opera = new Model.Operating();
+        public ObservableCollection<Person> oc = new ObservableCollection<Person>();
+
 
         public string Surname { 
             get { return surname; } 

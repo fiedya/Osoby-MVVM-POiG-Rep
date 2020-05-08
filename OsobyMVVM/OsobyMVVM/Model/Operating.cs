@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 namespace OsobyMVVM.Model
 {
     /// <summary>
-    /// Klasa, która miałą służyć czemuś, ale widzę że niekoniecznie...
+    /// Klasa, która miała służyć czemuś, ale widzę że niekoniecznie...
     /// </summary>
     class Operating
     {
         public Person person { get; } = new Person("", "", 0,0);
 
-      
         public Person AddPerson(string[] s, int[] i)
         {
             person.Surname = Uplo(s[0]);

@@ -17,7 +17,7 @@ namespace OsobyMVVM.ViewModel
     {
 
 
-        static string path = @"../../people.json";
+        private static string path = @"../../people.json";
         public static void PersonToJson(Person p)
         {
             string jsonString;

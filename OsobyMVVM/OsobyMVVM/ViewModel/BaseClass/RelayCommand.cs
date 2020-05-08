@@ -15,11 +15,11 @@ namespace OsobyMVVM.ViewModel.BaseClass
 
         //delegata Action<object> jest typem określającym metody nic nie 
         //zwracające o jednym argumencie typu object
-        readonly Action<object> _execute;
+        private readonly Action<object> _execute;
 
         //delegata Predicate<object> oznacza metodę zwracającą zmienną typu
         // bool o argumencie object
-        readonly Predicate<object> _canExecute;
+        private readonly Predicate<object> _canExecute;
 
         #endregion
 

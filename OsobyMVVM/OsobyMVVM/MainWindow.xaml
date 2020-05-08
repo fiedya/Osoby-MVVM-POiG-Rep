@@ -33,8 +33,6 @@
 
 
 
-
-
             <TextBox  x:Name="firstName" Margin="10,10,10,10" Height="20" Width="270"
 
                   Background="darkred" TextAlignment="Center"
@@ -108,7 +106,7 @@
 
             <ListBox ItemsSource="{Binding Path= Oc}"
                      SelectedItem="{Binding CurrentPerson, Mode=TwoWay}"
-                     FontSize="13">
+                     FontSize="13" Background="LightSteelBlue">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel>
