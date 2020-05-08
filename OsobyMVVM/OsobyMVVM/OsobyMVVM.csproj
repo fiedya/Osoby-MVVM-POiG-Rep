@@ -92,7 +92,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\JsonManager.cs" />
+    <Compile Include="ViewModel\JsonManager.cs" />
     <Compile Include="Model\Operating.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="ViewModel\BaseClass\RelayCommand.cs" />

@@ -7,13 +7,16 @@ using System.IO;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
-namespace OsobyMVVM.Model
+namespace OsobyMVVM.ViewModel
 {
+    using Model;
     /// <summary>
     /// Klasa służąca konwersji do JSON i z JSONa
     /// </summary>
-   static class JsonManager
+    static class JsonManager
     {
+
+
         static string path = @"../../people.json";
         public static void PersonToJson(Person p)
         {
